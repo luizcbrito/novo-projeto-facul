@@ -243,6 +243,52 @@ public class LSEProduto {
         }
     }
     
-    
+    public LSEProduto criarUniao(LSEProduto outro){
+        LSEProduto listaUniao = new LSEProduto();
+        LSENode aux;
+        Produto original,copia;
+        
+        aux = this.primeiro;
+        while(aux != null){
+            original = aux.getInfo();
+            copia = original.copiarProduto();
+            listaUniao.inserirNoFinal(copia);
+            aux = aux.getProx();
+        }
+        aux = outro.primeiro;
+        while(aux != null){
+            original = aux.getInfo();
+            copia = original.copiarProduto();
+            listaUniao.inserirNoFinal(copia);
+            aux = aux.getProx();
+        
+        }
+        return listaUniao;
+    }
 
+
+    
+    /*
+    da questao 3 uma ideia que me deu
+    
+    public LSEProduto somarLista(LSEProduto lista){
+        LSEProduto listaSoma = null;
+        LSENode aux;
+        LSENode auxLista;
+        LSENode soma = null;
+        
+        aux = this.primeiro;
+        auxLista = lista.primeiro;
+        
+        while (aux != null && auxLista != null){
+            soma.getInfo().setPreco(aux.getInfo().getPreco() + auxLista.getInfo().getPreco());
+          
+        }
+        
+        
+        return listaSoma;
+        
+    }
+    */
+    
 }

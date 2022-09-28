@@ -46,6 +46,14 @@ public class Produto{
         this.estoque = estoque;
     }
     
+    public Produto copiarProduto(){
+        Produto aux = null;
+        aux = new Produto (this.codigo,this.descricao);
+        aux.setEstoque(this.estoque);
+        aux.setPreco(this.preco);
+        
+        return aux;
+    }
     
     @Override
     public String toString (){
